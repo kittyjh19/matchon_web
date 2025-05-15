@@ -1,6 +1,6 @@
 server:
 
-  port: ${PORT} #hyomin2
+  port: ${PORT}
 
 spring:
   profiles:
