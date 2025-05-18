@@ -27,17 +27,19 @@
             </label>
             <label>
                 팀 소개:
-                <textarea cols="30" rows="5" placeholder="팀 소개">
+                <textarea cols="30" rows="5" placeholder="팀 소개" class="teamIntro">
+
 
                 </textarea>
             </label>
             <label>
                 경기장 예약 내역:
-                <input type="file">
+                <input type="file" class="reservationFile">
             </label>
             <label>
                 경기장명:
-                <input type="text" placeholder="경기장명">
+                <input type="text" placeholder="경기장명" class="sports-facility-name">
+
             </label>
             <label>
                 경기장 주소:
@@ -46,7 +48,8 @@
             </label>
             <label>
                 경기 날짜:
-                <input type="datetime-local">
+                <input type="datetime-local" id="matchDate">
+
             </label>
             <label>
                 현재 참가 인원:
@@ -62,7 +65,8 @@
             </label>
             <label>
                 경기 방식 소개:
-                <textarea cols="30" rows="5" placeholder="팀 소개">
+                <textarea cols="30" rows="5" placeholder="경기 방식 소개" class="matchIntro">
+
                 </textarea>
             </label>
 
@@ -77,6 +81,8 @@
 </div>
 
 <div th:replace="~{common/footer::footer}"></div>
+<<<<<<< HEAD
+=======
 <!--<<<<<<< HEAD-->
 <!--=======-->
 <!--<script>-->
@@ -111,5 +117,6 @@
 <!--    }-->
 <!--</script>-->
 <!--&gt;>>>>>> develop-->
+>>>>>>> develop
 </body>
 </html>
