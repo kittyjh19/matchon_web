@@ -8,6 +8,9 @@ import org.springframework.web.multipart.MultipartFile;
 
 import java.time.LocalDateTime;
 
+import java.time.LocalTime;
+
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -26,6 +29,8 @@ public class ReqMatchupBoardDto {
     private String sportsFacilityAddress;
 
     private LocalDateTime matchDate;
+
+    private Integer matchDuration;
 
     private Integer currentParticipants;
 
