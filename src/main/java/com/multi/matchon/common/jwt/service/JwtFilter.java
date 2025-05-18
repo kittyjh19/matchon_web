@@ -4,6 +4,7 @@ import com.multi.matchon.common.auth.dto.CustomUser;
 import com.multi.matchon.common.auth.service.CustomUserDetailsService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
+import jakarta.servlet.http.Cookie;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import lombok.RequiredArgsConstructor;
@@ -30,12 +31,23 @@ public class JwtFilter extends OncePerRequestFilter {
 
         String uri = request.getRequestURI();
         String token = resolveToken(request);
+        if(token==null){
+            if(request.getCookies()!=null){
+                for(Cookie cookie : request.getCookies()){
+                    if("Authorization".equals(cookie.getName())){
+                        token = cookie.getValue();
+                        break;
+                    }
+                }
+            }
+        }
 
         // 1. 토큰이 없고 인증 제외 경로일 경우: 그냥 통과
         if (token == null && isExcludedPath(uri)) {
             filterChain.doFilter(request, response);
             return;
         }
+
 
         // 2. 토큰이 있을 경우 → 유효성 검증 및 SecurityContext 설정
         if (token != null && jwtTokenProvider.validateToken(token)) {
