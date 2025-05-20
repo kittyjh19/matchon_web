@@ -1,6 +1,5 @@
 package com.multi.matchon.community.repository;
 
-
 import com.multi.matchon.community.domain.Board;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
