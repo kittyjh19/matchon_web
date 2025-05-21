@@ -40,6 +40,10 @@ public class FaqService {
                 .collect(Collectors.toList());
     }
 
+    public Long savePost(FaqDto faqDto) {
+        return faqRepository.save(faqDto.toEntity()).getId();
+    }
+
     private FaqDto convertEntityToDto(Faq faq) {
         return FaqDto.builder()
                 .id(faq.getId())
@@ -48,6 +52,7 @@ public class FaqService {
                 .faqTitle(faq.getFaqTitle())
                 .faqContent(faq.getFaqContent())
                 .isDeleted(faq.getIsDeleted())
+                .createdDate(faq.getCreatedDate())
                 .build();
     }
 }
