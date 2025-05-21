@@ -1,6 +1,5 @@
 package com.multi.matchon.customerservice.domain;
 
-import com.multi.matchon.common.domain.BaseEntity;
 import com.multi.matchon.member.domain.Member;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -15,7 +14,7 @@ import lombok.NoArgsConstructor;
 @Getter
 @Table(name="faq")
 //@Setter: JPA entity에서 setter사용은 자제, test용
-public class Faq extends BaseEntity {
+public class Faq extends TimeEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name="faq_id")

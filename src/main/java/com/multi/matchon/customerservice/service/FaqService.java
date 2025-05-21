@@ -7,8 +7,8 @@ import com.multi.matchon.customerservice.repository.FaqRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 @Service
 @RequiredArgsConstructor
@@ -16,22 +16,28 @@ public class FaqService {
 
     private final FaqRepository faqRepository;
 
-    public List<Faq> getFaqList(CustomerServiceType category) {
-        return (category != null)
+    public List<FaqDto> getFaqList(CustomerServiceType category) {
+        List<Faq> faqs = (category != null)
                 ? faqRepository.findByFaqCategoryAndIsDeletedFalse(category)
-                : faqRepository.findByIsDeletedFalse(); // 전체 목록
+                : faqRepository.findByIsDeletedFalse();
+
+        return faqs.stream()
+                .map(this::convertEntityToDto)
+                .collect(Collectors.toList());
     }
 
-    public List<FaqDto> searchPosts(String keyword) {
-        List<Faq> faqs = faqRepository.findByFaqTitleContaining(keyword);
-        List<FaqDto> faqDtoList = new ArrayList<>();
+    public List<FaqDto> searchByTitle(String keyword) {
+        List<Faq> faqs = faqRepository.findByFaqTitleContainingIgnoreCaseAndIsDeletedFalse(keyword);
+        return faqs.stream()
+                .map(this::convertEntityToDto)
+                .collect(Collectors.toList());
+    }
 
-        if(faqs.isEmpty()) return faqDtoList;
-
-        for(Faq faq : faqs) {
-            faqDtoList.add(this.convertEntityToDto(faq));
-        }
-        return faqDtoList;
+    public List<FaqDto> searchByCategoryAndTitle(CustomerServiceType category, String keyword) {
+        List<Faq> faqs = faqRepository.findByFaqCategoryAndFaqTitleContainingIgnoreCaseAndIsDeletedFalse(category, keyword);
+        return faqs.stream()
+                .map(this::convertEntityToDto)
+                .collect(Collectors.toList());
     }
 
     private FaqDto convertEntityToDto(Faq faq) {

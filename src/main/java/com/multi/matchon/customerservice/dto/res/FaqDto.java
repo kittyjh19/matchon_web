@@ -7,6 +7,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.time.LocalDateTime;
+
 // 응답
 @Getter
 @ToString
@@ -19,14 +21,17 @@ public class FaqDto {
     private String faqTitle;
     private String faqContent;
     private Boolean isDeleted;
+    private LocalDateTime createdDate;
 
     @Builder
-    public FaqDto(Long id, Member member, CustomerServiceType faqCategory, String faqTitle, String faqContent, Boolean isDeleted) {
+    public FaqDto(Long id, Member member, CustomerServiceType faqCategory, String faqTitle, String faqContent, Boolean isDeleted, LocalDateTime createdDate) {
         this.id = id;
         this.member = member;
         this.faqCategory = faqCategory;
         this.faqTitle = faqTitle;
         this.faqContent = faqContent;
         this.isDeleted = isDeleted;
+        this.createdDate = createdDate;
+
     }
 }

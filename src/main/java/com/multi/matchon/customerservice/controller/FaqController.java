@@ -1,7 +1,6 @@
 package com.multi.matchon.customerservice.controller;
 
 import com.multi.matchon.customerservice.domain.CustomerServiceType;
-import com.multi.matchon.customerservice.domain.Faq;
 import com.multi.matchon.customerservice.dto.res.FaqDto;
 import com.multi.matchon.customerservice.service.FaqService;
 import lombok.RequiredArgsConstructor;
@@ -18,25 +17,32 @@ public class FaqController {
 
     private final FaqService faqService;
 
-    // CS 화면으로 이동. - faq 목록 조회
+    // 카테고리 + 키워드 통합 필터
     @GetMapping("/cs")
-    public String faqShow(@RequestParam(required = false)CustomerServiceType category, Model model) {
-        List<Faq> faqList = faqService.getFaqList(category);
+    public String faqShow(@RequestParam(required = false) CustomerServiceType category,
+                          @RequestParam(required = false) String keyword,
+                          Model model) {
 
-        // 로그
+        List<FaqDto> faqList;
+
+        if (keyword != null && !keyword.isBlank()) {
+            if (category != null) {
+                faqList = faqService.searchByCategoryAndTitle(category, keyword);
+            } else {
+                faqList = faqService.searchByTitle(keyword);
+            }
+        } else {
+            faqList = faqService.getFaqList(category);
+        }
+
+        // 로그 출력
         System.out.println("선택된 카테고리: " + category);
-        faqList.forEach(f -> System.out.println("조회된 카테고리: " + f.getFaqCategory()));
+        System.out.println("입력된 키워드: " + keyword);
+        faqList.forEach(f -> System.out.println("조회된 제목: " + f.getFaqTitle()));
 
         model.addAttribute("faqList", faqList);
         model.addAttribute("category", category);
-        return "cs/cs";
-    }
-
-    // 검색하기
-    @GetMapping("/faq/search")
-    public String search(@RequestParam(value = "keyword") String keyword, Model model) {
-        List<FaqDto> faqDtoList = faqService.searchPosts(keyword);
-        model.addAttribute("faqList", faqDtoList);
+        model.addAttribute("keyword", keyword); // 검색창 입력값 유지용
         return "cs/cs";
     }
 
