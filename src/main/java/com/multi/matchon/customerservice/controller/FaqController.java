@@ -38,7 +38,7 @@ public class FaqController {
     }
 
     // 등록하기
-    @GetMapping("/post")
+    @GetMapping("/faq/register")
     public String write() {
         return "cs/cs-faq-register";
     }
