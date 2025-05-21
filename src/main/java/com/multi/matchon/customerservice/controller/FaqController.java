@@ -38,7 +38,11 @@ public class FaqController {
     }
 
     // 등록하기
+<<<<<<< HEAD
     @GetMapping("/faq/register")
+=======
+    @GetMapping("/post")
+>>>>>>> e4a03441583eeb2fbc8e997805e2bc746deff384
     public String write() {
         return "cs/cs-faq-register";
     }
