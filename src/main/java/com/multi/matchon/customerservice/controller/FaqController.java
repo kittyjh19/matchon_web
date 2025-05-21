@@ -2,6 +2,7 @@ package com.multi.matchon.customerservice.controller;
 
 import com.multi.matchon.customerservice.domain.CustomerServiceType;
 import com.multi.matchon.customerservice.domain.Faq;
+import com.multi.matchon.customerservice.dto.res.FaqDto;
 import com.multi.matchon.customerservice.service.FaqService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
@@ -28,6 +29,14 @@ public class FaqController {
 
         model.addAttribute("faqList", faqList);
         model.addAttribute("category", category);
+        return "cs/cs";
+    }
+
+    // 검색하기
+    @GetMapping("/faq/search")
+    public String search(@RequestParam(value = "keyword") String keyword, Model model) {
+        List<FaqDto> faqDtoList = faqService.searchPosts(keyword);
+        model.addAttribute("faqList", faqDtoList);
         return "cs/cs";
     }
 
