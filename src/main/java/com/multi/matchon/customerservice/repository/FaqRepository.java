@@ -9,4 +9,5 @@ import java.util.List;
 public interface FaqRepository extends JpaRepository<Faq, Long> {
     List<Faq> findByIsDeletedFalse();
     List<Faq> findByFaqCategoryAndIsDeletedFalse(CustomerServiceType category);
+    List<Faq> findByFaqTitleContaining(String keyword);
 }

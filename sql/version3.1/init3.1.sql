@@ -139,29 +139,6 @@ VALUES (1, 1, 'TEAM_GUEST', 'Inquiry 1 Title', 'Content of inquiry 1', 'PENDING'
        (10, 10, 'TUTORIAL', 'Inquiry 10 Title', 'Content of inquiry 10', 'COMPLETED', '2025-05-17 20:52:28', 'Member10',
         '2025-05-17 20:52:28', 'Member10', FALSE);
 
-INSERT INTO faq (faq_id, admin_id, faq_category, faq_title, faq_content, created_date, created_person, modified_date,
-                 modified_person, is_deleted)
-VALUES (1, 1, 'TEAM_GUEST', 'FAQ 1 Title', 'Content of FAQ 1', '2025-05-17 20:52:28', 'Member1', '2025-05-17 20:52:28',
-        'Member1', FALSE),
-       (2, 2, 'EVENT', 'FAQ 2 Title', 'Content of FAQ 2', '2025-05-17 20:52:28', 'Member2', '2025-05-17 20:52:28',
-        'Member2', FALSE),
-       (3, 3, 'TUTORIAL', 'FAQ 3 Title', 'Content of FAQ 3', '2025-05-17 20:52:28', 'Member3', '2025-05-17 20:52:28',
-        'Member3', FALSE),
-       (4, 4, 'MANNER_TEMPERATURE', 'FAQ 4 Title', 'Content of FAQ 4', '2025-05-17 20:52:28', 'Member4',
-        '2025-05-17 20:52:28', 'Member4', FALSE),
-       (5, 5, 'COMMUNITY', 'FAQ 5 Title', 'Content of FAQ 5', '2025-05-17 20:52:28', 'Member5', '2025-05-17 20:52:28',
-        'Member5', FALSE),
-       (6, 6, 'ACCOUNT', 'FAQ 6 Title', 'Content of FAQ 6', '2025-05-17 20:52:28', 'Member6', '2025-05-17 20:52:28',
-        'Member6', FALSE),
-       (7, 7, 'REPORT', 'FAQ 7 Title', 'Content of FAQ 7', '2025-05-17 20:52:28', 'Member7', '2025-05-17 20:52:28',
-        'Member7', FALSE),
-       (8, 8, 'TEAM_GUEST', 'FAQ 8 Title', 'Content of FAQ 8', '2025-05-17 20:52:28', 'Member8', '2025-05-17 20:52:28',
-        'Member8', FALSE),
-       (9, 9, 'EVENT', 'FAQ 9 Title', 'Content of FAQ 9', '2025-05-17 20:52:28', 'Member9', '2025-05-17 20:52:28',
-        'Member9', FALSE),
-       (10, 10, 'TUTORIAL', 'FAQ 10 Title', 'Content of FAQ 10', '2025-05-17 20:52:28', 'Member10',
-        '2025-05-17 20:52:28', 'Member10', FALSE);
-
 INSERT INTO review (team_review_id, review_writer, review_rating, content, created_person, created_date,
                     modified_person, modified_date, is_deleted)
 VALUES (1, 1, 2, 'Review content by Member1', 'Member1', '2025-05-17 20:52:28', 'Member1', '2025-05-17 20:52:28',
