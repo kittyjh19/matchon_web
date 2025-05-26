@@ -36,7 +36,6 @@ public class CommentService {
         commentRepository.save(comment);
     }
 
-
     @Transactional
     public void deleteAllByBoard(Board board) {
         commentRepository.deleteAllByBoard(board);
