@@ -34,7 +34,7 @@
         <label for="category"></label>
         <select name="category" id="category">
             <option value="" th:selected="${category == null}">전체 보기</option>
-            <option value="TUTORIAL" th:selected="${category?.name() == 'TUTORIAL'}">이용방법</option>
+            <option value="HOWTOUSE" th:selected="${category?.name() == 'HOWTOUSE'}">이용방법</option>
             <option value="ACCOUNT" th:selected="${category?.name() == 'ACCOUNT'}">계정</option>
             <option value="TEAM_GUEST" th:selected="${category?.name() == 'TEAM_GUEST'}">Team / Guest</option>
             <option value="REPORT" th:selected="${category?.name() == 'REPORT'}">신고</option>
