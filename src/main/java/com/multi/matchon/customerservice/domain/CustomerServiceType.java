@@ -3,7 +3,7 @@ package com.multi.matchon.customerservice.domain;
 
 public enum CustomerServiceType {
     // 이용방법
-    HOWTOUSE("이용방법"),
+    TUTORIAL("이용방법"),
     // 계정
     ACCOUNT("계정"),
     // TEAM / GUEST
@@ -15,9 +15,7 @@ public enum CustomerServiceType {
     // 커뮤니티
     COMMUNITY("커뮤니티"),
     // 대회
-    EVENT("대회"),
-
-    TUTORIAL("이용가이드");
+    EVENT("대회");
 
     private final String label;
 
