@@ -47,7 +47,8 @@
 
         <a href="/inquiry" class="btn1">1:1 문의 작성</a>
     </form>
-<br>
+
+    <br>
     <table>
         <thead>
         <tr>
@@ -60,21 +61,26 @@
         </tr>
         </thead>
         <tbody>
-        <tbody>
         <tr th:each="faq, stat : ${faqList}">
-            <!-- 1부터 시작, 페이지마다 순차 증가..-->
             <td th:text="${page.number * page.size + stat.index + 1}">No</td>
             <td th:text="${faq.faqCategory.label}">카테고리</td>
             <td>
                 <a th:href="@{/faq/detail/{id}(id=${faq.faqId})}" th:text="${faq.faqTitle}">제목</a>
             </td>
             <td th:text="${#temporals.format(faq.createdDate, 'yyyy-MM-dd')}">작성일</td>
+            <td th:if="${isAdmin}" th:text="${#temporals.format(faq.modifiedDate, 'yyyy-MM-dd HH:mm')}">수정일</td>
+            <td th:if="${isAdmin}">
+                <form th:action="@{/faq/delete/{id}(id=${faq.faqId})}" method="post">
+                    <button type="submit" style="background-color: red; color: white; border: none; padding: 4px 8px; border-radius: 4px;">
+                        삭제
+                    </button>
+                </form>
 
-            <td th:if="${isAdmin}" th:text="${faq.createdDate}">작성일</td>
-            <td th:if="${isAdmin}" th:text="${faq.modifiedDate}">수정일</td>
+
+
+            </td>
         </tr>
         </tbody>
-
     </table>
 
     <div class="pagination">
@@ -83,25 +89,21 @@
         <a th:if="${!page.last}" th:href="@{/cs(page=${page.number + 1}, category=${category}, keyword=${keyword})}">&gt;</a>
     </div>
 
-
     <!-- 관리자만 FAQ 등록 버튼 표시 -->
     <th:block th:if="${isAdmin}">
         <div style="text-align: right; margin: 10px 0;">
             <a href="/faq/register" style="
-            display: inline-block;
-            padding: 8px 16px;
-            background-color: #007bff;
-            color: white;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-        ">
+                display: inline-block;
+                padding: 8px 16px;
+                background-color: #007bff;
+                color: white;
+                border-radius: 4px;
+                text-decoration: none;
+                font-weight: bold;">
                 FAQ 등록
             </a>
         </div>
     </th:block>
-
-
 
 </div>
 <div th:replace="~{common/footer::footer}"></div>
