@@ -83,6 +83,6 @@ jwt:
   secret: ${JWT_SECRET}
 
 file:
-  upload-dir: C:/upload-dir
+  upload-dir: C:/upload-dir 잠시만요
 
-# test1
+# 1234343455ㅀㄹㄹㄹㄹㄹㄹㅎㅎ
