@@ -7,5 +7,6 @@ import java.util.List;
 
 public interface StadiumRepository extends JpaRepository<Stadium, Long> {
 
-    List<Stadium> findByCpNm(String cpNm);
+    // 경기, 서울, 강원, 충청, 전라, 제주, 경상이 포함된 DB를 필터별 조회...
+    List<Stadium> findByCpNmContaining(String cpNm);
 }
