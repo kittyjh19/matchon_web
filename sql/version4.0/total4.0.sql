@@ -50,7 +50,6 @@ create table stadium
     stadium_region                  varchar(100),
     stadium_name                    varchar(100),
     stadium_address                 varchar(255),
-    stadium_tel                     varchar(255),
     stadium_image_attchment_enabled boolean  default false,
     create_date                     DATETIME DEFAULT current_timestamp,
     create_person                   varchar(100),
@@ -58,7 +57,6 @@ create table stadium
     modified_person                 varchar(100),
     is_deleted                      boolean  default false
 );
-
 
 -- positions
 CREATE TABLE positions
