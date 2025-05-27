@@ -6,6 +6,7 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import java.util.List;
 
@@ -16,9 +17,17 @@ public class StadiumController {
     private final StadiumService stadiumService;
 
     @GetMapping("/stadium")
-    public String showStadiumList(Model model) {
-        List<Stadium> stadiums = stadiumService.getAllStadiums(); // 변수명 수정
-        model.addAttribute("stadiums", stadiums); // ★ 뷰와 일치하게 변수명 수정
-        return "stadium/stadium"; // stadium.html이 templates/stadium/ 하위에 위치해야 함
+    public String showStadiumList(@RequestParam(required = false) String region, Model model) {
+        List<Stadium> stadiums;
+
+        if (region != null && !region.isEmpty()) {
+            stadiums = stadiumService.getStadiumsByRegion(region);
+        } else {
+            stadiums = stadiumService.getAllStadiums();
+        }
+
+        model.addAttribute("stadiums", stadiums);
+        model.addAttribute("selectedRegion", region);
+        return "stadium/stadium";
     }
 }

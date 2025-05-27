@@ -18,8 +18,8 @@ public class StadiumService {
         return stadiumRepository.findAll();
     }
 
-    // 지역별로 경기장 필터링 (선택사항)
+    // 지역별로 경기장 필터링
     public List<Stadium> getStadiumsByRegion(String region) {
-        return stadiumRepository.findByCpNm(region);
+        return stadiumRepository.findByCpNmContaining(region);
     }
 }
