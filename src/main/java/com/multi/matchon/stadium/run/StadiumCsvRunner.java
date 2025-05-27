@@ -17,6 +17,6 @@ public class StadiumCsvRunner implements CommandLineRunner {
         String path = "src/main/resources/stadium.csv";
 
         stadiumCsvService.importCsv(path);
-        System.out.println("✅ 경기장 CSV 데이터 import 완료!");
+        System.out.println("경기장 CSV 데이터 import 완료!");
     }
 }
