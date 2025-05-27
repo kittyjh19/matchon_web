@@ -3,9 +3,8 @@ package com.multi.matchon.stadium.run;
 import com.multi.matchon.stadium.service.StadiumCsvService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.boot.CommandLineRunner;
-import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 @RequiredArgsConstructor
 public class StadiumCsvRunner implements CommandLineRunner {
 
