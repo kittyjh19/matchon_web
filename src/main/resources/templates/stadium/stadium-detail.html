@@ -25,7 +25,7 @@
         <p><span th:text="${stadium.cpNm}">지역명</span></p>
         <p><span th:text="${stadium.faciRoadAddr}">주소</span></p>
         <p><span th:text="${stadium.faciTelNo}">전화번호</span></p>
-        <button class="stadiumMap">구장위치</button>
+        <a th:href="@{/stadium/map(id=${stadium.id})}">구장 위치</a>
     </div>
 
 </div>

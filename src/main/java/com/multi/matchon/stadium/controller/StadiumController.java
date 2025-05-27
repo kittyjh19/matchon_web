@@ -39,4 +39,12 @@ public class StadiumController {
         model.addAttribute("stadium", stadium);
         return "stadium/stadium-detail"; // 구장 상세보기 페이지로 이동.
     }
+
+    @GetMapping("/stadium/map")
+    public String showStadiumMap(@RequestParam("id") Long id, Model model) {
+        Stadium stadium = stadiumService.getStadiumById(id);
+        model.addAttribute("stadium", stadium);
+        return "stadium/stadium-map";
+    }
+
 }
