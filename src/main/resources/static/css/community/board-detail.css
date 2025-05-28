@@ -48,7 +48,6 @@
     margin-top: 12px;
 }
 
-
 .post-action-right {
     position: absolute;
     top: 10px;
@@ -60,6 +59,7 @@
 
 .post-action-right button {
     margin-left: 10px;
+}
 
 .board-delete-button {
     background-color: transparent;
@@ -86,7 +86,6 @@
 .back-link:hover {
     text-decoration: underline;
 }
-
 
 /* 첨부파일 */
 .attachment-box {
@@ -121,7 +120,7 @@
     background-color: #fdfdfd;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
     border: 1px solid #e0e0e0;
 }
 
@@ -191,11 +190,10 @@
     cursor: pointer;
     font-weight: bold;
     font-size: 13px;
-
 }
 
 .report-button:hover {
     background-color: mistyrose;
     transform: scale(1.05);
-    transition: transform 0.2s ease, background-color 0.2s ease; /* 부드럽게 확대되도록 */
+    transition: transform 0.2s ease, background-color 0.2s ease;
 }
