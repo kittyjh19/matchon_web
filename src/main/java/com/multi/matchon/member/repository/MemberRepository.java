@@ -24,5 +24,5 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 
     Optional<Member> findByIdAndIsDeletedFalse(Long id);
 
-    boolean existsByMemberEmail(String mail);
+    Optional<Member> findByMemberEmailAndIsDeletedFalse(String senderEmail);
 }
