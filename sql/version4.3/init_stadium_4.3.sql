@@ -2855,3 +2855,11 @@ WHERE stadium_id IN (
                       WHERE rn > 1
                   ) AS temp_ids
 );
+
+update stadium set image_url = '1_stadium.jpg' where stadium_id = 1;
+update stadium set image_url = '2_stadium.png' where stadium_id = 2;
+update stadium set image_url = '3_stadium.png' where stadium_id = 3;
+update stadium set image_url = '4_stadium.png' where stadium_id = 4;
+update stadium set image_url = '5_stadium.jpeg' where stadium_id = 5;
+update stadium set image_url = '6_stadium.jpg' where stadium_id = 6;
+update stadium set image_url = '7_stadium.jpeg' where stadium_id = 7;
