@@ -235,13 +235,13 @@ CREATE TABLE comment
 
 -- host_profile
 CREATE TABLE host_profile (
-    host_profile_id 					BIGINT AUTO_INCREMENT PRIMARY KEY,
-    host_id 							BIGINT NOT NULL,
-    host_name 							VARCHAR(100) UNIQUE DEFAULT NULL,
-    created_date DATETIME 				DEFAULT CURRENT_TIMESTAMP,
-    modified_date DATETIME 				DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
-    picture_attachment_enabled 			BOOLEAN DEFAULT TRUE CHECK (picture_attachment_enabled = TRUE),
-    CONSTRAINT FK_host_profile_2_member FOREIGN KEY (host_id) REFERENCES member (member_id)
+                              host_profile_id 					BIGINT AUTO_INCREMENT PRIMARY KEY,
+                              host_id 							BIGINT NOT NULL,
+                              host_name 							VARCHAR(100) UNIQUE DEFAULT NULL,
+                              created_date DATETIME 				DEFAULT CURRENT_TIMESTAMP,
+                              modified_date DATETIME 				DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+                              picture_attachment_enabled 			BOOLEAN DEFAULT TRUE CHECK (picture_attachment_enabled = TRUE),
+                              CONSTRAINT FK_host_profile_2_member FOREIGN KEY (host_id) REFERENCES member (member_id)
 );
 
 
@@ -253,7 +253,7 @@ CREATE TABLE host_profile (
 -- ↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
 
 -- inquiry_answer
-CREATE TABLE inquiry_answer 
+CREATE TABLE inquiry_answer
 (
     answer_id BIGINT AUTO_INCREMENT PRIMARY KEY,
     inquiry_id BIGINT UNIQUE NOT NULL, -- UNIQUE 추가
@@ -394,10 +394,10 @@ CREATE TABLE event_request
 
 CREATE TABLE chat_user_block
 (
-	chat_user_block_id BIGINT AUTO_INCREMENT PRIMARY KEY,
-	blocker_id BIGINT NOT NULL,
-	blocked_id BIGINT NOT NULL,
-	created_date    DATETIME DEFAULT CURRENT_TIMESTAMP,
+    chat_user_block_id BIGINT AUTO_INCREMENT PRIMARY KEY,
+    blocker_id BIGINT NOT NULL,
+    blocked_id BIGINT NOT NULL,
+    created_date    DATETIME DEFAULT CURRENT_TIMESTAMP,
     created_person  VARCHAR(100),
     modified_date   DATETIME DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
     modified_person VARCHAR(100),
