@@ -463,7 +463,7 @@ VALUES (1, 1, 1, FALSE, '2025-05-17 20:52:28', 'Member1', '2025-05-17 20:52:28',
        (9, 9, 9, TRUE, '2025-05-17 20:52:28', 'Member9', '2025-05-17 20:52:28', 'Member9'),
        (10, 10, 10, TRUE, '2025-05-17 20:52:28', 'Member10', '2025-05-17 20:52:28', 'Member10');
 
-
+truncate table stadium;
 
 INSERT INTO stadium (stadium_name, stadium_region, stadium_address, stadium_tel)
 VALUES ('청계중앙공원 축구장', '경기도', '경기도 화성시 동탄대로시범길 133 (청계동)', '031-355-1292'),
@@ -3308,4 +3308,21 @@ VALUES ('청계중앙공원 축구장', '경기도', '경기도 화성시 동탄
        ('금호강변검단(축구장)', '대구광역시', '대구 북구 검단동 420', '053-665-3954'),
        ('구민운동장(축구장)', '대구광역시', '대구광역시 북구 구암로 391 (국우동)', '053-665-3954'),
        ('시각장애인축구장', '광주광역시', '', '062-613-3553'),
-       ('(축구장-01) 양산종합운동장 주경기장', '경상남도', '경상남도 양산시 양산대로 849 (북부동)', '055-379-8532')
+       ('(축구장-01) 양산종합운동장 주경기장', '경상남도', '경상남도 양산시 양산대로 849 (북부동)', '055-379-8532');
+
+DELETE FROM stadium
+WHERE stadium_id IN (
+    SELECT * FROM (
+                      SELECT stadium_id
+                      FROM (
+                               SELECT stadium_id,
+                                      ROW_NUMBER() OVER (PARTITION BY stadium_name, stadium_tel ORDER BY stadium_id) AS rn
+                               FROM stadium
+                           ) AS ranked
+                      WHERE rn > 1
+                  ) AS temp_ids
+);
+
+
+
+
