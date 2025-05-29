@@ -211,7 +211,8 @@ public class BoardController {
         if (optional.isEmpty()) return ResponseEntity.notFound().build();
 
         Attachment attachment = optional.get();
-        S3Resource resource = awsS3Utils.downloadFileWithFullName(COMMUNITY_DIR, filename);
+        S3Resource resource = awsS3Utils.downloadFileWithFullName(attachment.getSavePath());
+
 
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION,
