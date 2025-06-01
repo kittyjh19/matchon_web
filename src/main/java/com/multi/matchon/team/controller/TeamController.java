@@ -6,6 +6,7 @@ import com.multi.matchon.common.dto.res.PageResponseDto;
 import com.multi.matchon.team.dto.req.ReqReviewDto;
 import com.multi.matchon.team.dto.req.ReqTeamDto;
 import com.multi.matchon.team.dto.req.ReqTeamJoinDto;
+import com.multi.matchon.team.dto.res.ResJoinRequestDetailDto;
 import com.multi.matchon.team.dto.res.ResJoinRequestDto;
 import com.multi.matchon.team.dto.res.ResReviewDto;
 import com.multi.matchon.team.dto.res.ResTeamDto;
@@ -272,6 +273,18 @@ public class TeamController {
     public ResponseEntity<ApiResponse<?>> deleteResponse(@PathVariable Long responseId, @AuthenticationPrincipal CustomUser user) {
         teamService.deleteResponse(responseId, user);
         return ResponseEntity.ok(ApiResponse.ok(null));
+    }
+
+
+    @GetMapping("/team/join-request/{requestId}")
+    public ModelAndView viewJoinRequestDetail(@PathVariable Long requestId,
+                                              @AuthenticationPrincipal CustomUser user) {
+        ModelAndView mv = new ModelAndView("team/join-request-detail");
+
+        ResJoinRequestDetailDto joinRequestDto = teamService.getJoinRequestDetail(requestId, user);
+        mv.addObject("joinRequest", joinRequestDto);
+
+        return mv;
     }
 
 }
