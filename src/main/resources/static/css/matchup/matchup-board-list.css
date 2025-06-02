@@ -94,6 +94,14 @@ h1 {
     background-color: #7a3c99;
 }
 
+.btn-my-match {
+    background-color: #e67e22;
+}
+.btn-my-match:hover {
+    background-color: #cf711c;
+}
+
+
 
 /* ===== 카드 레이아웃 ===== */
 .matchup-card {
@@ -157,5 +165,12 @@ h1 {
     font-size: 1.2rem;
     color: #777;
     padding: 2rem 0;
+}
+
+.truncate {
+    width: 400px;           /* 너비 고정 */
+    white-space: nowrap;    /* 줄바꿈 없음 */
+    overflow: hidden;       /* 넘친 부분 숨김 */
+    text-overflow: ellipsis; /* 말줄임표 (...) 표시 */
 }
 

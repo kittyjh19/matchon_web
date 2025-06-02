@@ -33,7 +33,7 @@ h1 {
 }
 
 /* 버튼 스타일 */
-.detail, .request {
+.detail, .request, .group-chat {
     padding: 6px 12px;
     margin: 3px;
     border: none;
@@ -50,12 +50,19 @@ h1 {
     background-color: #007a00;
 }
 
+.group-chat{
+    background-color: #007bff;
+}
+
 .detail:hover {
     background-color: #003060;
 }
 
 .request:hover {
     background-color: #005a00;
+}
+.group-chat:hover{
+    background-color: #0056b3;
 }
 
 /* 페이징 버튼 */
@@ -182,6 +189,15 @@ h1 {
     color: #777;
     padding: 2rem 0;
 }
+
+
+.truncate {
+    width: 400px;           /* 너비 고정 */
+    white-space: nowrap;    /* 줄바꿈 없음 */
+    overflow: hidden;       /* 넘친 부분 숨김 */
+    text-overflow: ellipsis; /* 말줄임표 (...) 표시 */
+}
+
 
 
 
