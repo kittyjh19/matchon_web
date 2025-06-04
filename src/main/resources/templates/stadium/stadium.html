@@ -34,8 +34,7 @@
         );
 
         const bounds = new kakao.maps.LatLngBounds();
-
-        // ✅ stadium 데이터 fetch
+        
         fetch("/api/stadiums")
             .then(response => response.json())
             .then(data => {
