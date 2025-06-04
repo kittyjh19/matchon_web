@@ -52,9 +52,7 @@ create table stadium
     stadium_address                 varchar(255),
     stadium_tel						varchar(255),
     create_date                     DATETIME DEFAULT current_timestamp,
-    create_person                   varchar(100),
     modified_date                   DATETIME DEFAULT current_timestamp on update current_timestamp,
-    modified_person                 varchar(100),
     is_deleted                      boolean  default false,
     latitude                        double,
     longitude                       double

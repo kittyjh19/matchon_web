@@ -40,8 +40,8 @@ public class Stadium extends BaseEntity {
     @Column(name = "image_url")
     private String imageUrl;
 
-    private double latitude;
-    private double longitude;
+    private Double latitude;
+    private Double longitude;
 
     public String getFullImageUrl() {
         String regionFolder = switch (stadiumRegion) {
