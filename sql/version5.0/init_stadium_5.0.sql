@@ -1,7 +1,5 @@
 use matchon;
 
-# # 초기 데이터 삭제 후 번호 밀리지 않게 1로 시작하게 수정.
-# ALTER TABLE stadium auto_increment = 1;
 
 # 위도, 경도 추가.
 INSERT INTO stadium (stadium_name, stadium_region, stadium_address, stadium_tel, latitude, longitude)

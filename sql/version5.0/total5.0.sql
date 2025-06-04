@@ -44,11 +44,8 @@ CREATE TABLE chat_room
 
 );
 
-# DELETE FROM stadium;
-#
-# DROP TABLE stadium;
 
-# 생성자, 수정자 컬럼 삭제, 위도, 경도 컬럼 추가
+# 생성자, 수정자  컬럼 삭제, 위도 경도 컬럼 추가
 CREATE TABLE stadium
 (
     stadium_id                      bigint primary KEY AUTO_INCREMENT,
