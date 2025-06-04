@@ -1,7 +1,9 @@
 use matchon;
 
-ALTER TABLE stadium auto_increment = 1;
+# # 초기 데이터 삭제 후 번호 밀리지 않게 1로 시작하게 수정.
+# ALTER TABLE stadium auto_increment = 1;
 
+# 위도, 경도 추가.
 INSERT INTO stadium (stadium_name, stadium_region, stadium_address, stadium_tel, latitude, longitude)
 VALUES ('청계중앙공원 축구장', '경기도', '경기도 화성시 동탄대로시범길 133 (청계동)', '031-355-1292', 37.199989, 127.112243),
        ('율면체육공원축구장', '경기도', '경기 이천시 율면 본죽리 30-17', '031-644-4315', 37.079696, 127.530784),
