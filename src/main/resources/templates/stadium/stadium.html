@@ -107,24 +107,25 @@
 
         .custom_typebtn {
             position: absolute;
-            top: 10px;
-            left: 10px;
+            bottom: 10px;
+            right: 10px;
             z-index: 10;
         }
 
-        .custom_typebtn .back_btn .refreshbtn {
+        .custom_typebtn .refresh_btn {
+            display: block;
             width: 32px;
-            height: 28px;
-            font-size: 0;
-            background: url(/img/refresh_btn.png) no-repeat 0 -40px;
-            text-indent: -9999px
+            height: 32px;
+            background: url(/img/refresh_btn.png) no-repeat center center;
+            background-size: contain;
+            text-indent: -9999px;
+            cursor: pointer;
         }
-
-
 
     </style>
 </head>
 <body>
+<!-- 헤더 -->
 <div th:replace="~{common/header::header}"></div>
 
 <div class="allcontent">
@@ -140,25 +141,26 @@
 
     <div id="map-container">
         <div id="map">
+<!--            사용자 현재 위치로 돌아가기 버튼 -->
             <div class="MapControllerView">
                 <a href="#none" class="accessLocation" onclick="moveToCurrentLocation()" title="내 위치로 이동">
                     <span class="screen_out"></span>
                     <span class="coach_accessLocation"></span>
                 </a>
             </div>
-        </div>
-        <div class="custom_typebtn">
-            <a href="#backbtn" class="back_btn" onclick="resetMap()" title="돌아가기">
-                <span class="screen_out"></span>
-                <span class="refreshbtn" onclick="resetMap()"><img src="/img/refresh_btn.png" alt="돌아가기"></span>
-            </a>
+<!--            원래 맵 상태로 돌아가기 버튼 재배치.. -->
+            <div class="custom_typebtn">
+                <a href="#none" class="refresh_btn" onclick="resetMap()" title="돌아가기">
+                    <span class="screen_out">돌아가기</span>
+                </a>
+            </div>
         </div>
     </div>
 </div>
 
+<!-- 카카오맵 api 키 입니다.-->
 <script src="https://dapi.kakao.com/v2/maps/sdk.js?appkey=a7fac0ef351b12f799117f0847bf1d23&autoload=false&libraries=clusterer,services"></script>
 <script>
-
     let currentMarker = null;
 
     let map;
@@ -402,6 +404,7 @@
         }
     }
 
+    // 원래 맵 상태로 돌아가기
     window.resetMap = function () {
         map.setCenter(new kakao.maps.LatLng(37.289506, 127.053467));
         map.setLevel(13);
