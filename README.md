@@ -482,7 +482,7 @@ public ChatResponse getChatbotResponse(String userMessage) {
 | 이름 | 역할 | 담당 기능 |
 |------|------|----------|
 | **홍주희** | Full-Stack | 회원 관리, 메일 알림 서비스, 1:1 문의, 대회 이벤트, AI 챗봇, 시스템 설계, 노션 관리, PPT |
-| **최호민 (팀장)** 🚩 | Full-Stack | MatchUP 기능, 게임/단체 채팅, 매너온도 평가, 알림 서비스, DB & Git 관리, 배포 |
+| **최효민 (팀장)** 🚩 | Full-Stack | MatchUP 기능, 게임/단체 채팅, 매너온도 평가, 알림 서비스, DB & Git 관리, 배포 |
 | 전준혁 | Full-Stack | 커뮤니티 기능, 댓글 기능, 사용자 신고 및 정지 기능, 서비스 UI |
 | 정준열 | Full-Stack | Team 기능, 리뷰 기능, Team 채팅, 발표 |
 | 최성은 | Full-Stack | FAQ 기능, 구장 조회 |
