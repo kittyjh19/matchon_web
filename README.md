@@ -23,6 +23,7 @@
 - [트러블 슈팅](#-트러블-슈팅)
 - [프로젝트 성과](#-프로젝트-성과)
 - [팀 구성](#-팀-구성)
+- [API 문서](#-api-문서)
 
 ---
 
@@ -480,11 +481,11 @@ public ChatResponse getChatbotResponse(String userMessage) {
 
 | 이름 | 역할 | 담당 기능 |
 |------|------|----------|
+| **홍주희** | Full-Stack | 회원 관리, 메일 알림 서비스, 1:1 문의, 대회 이벤트, AI 챗봇, 시스템 설계, 노션 관리, PPT |
 | **최호민 (팀장)** 🚩 | Full-Stack | MatchUP 기능, 게임/단체 채팅, 매너온도 평가, 알림 서비스, DB & Git 관리, 배포 |
 | 전준혁 | Full-Stack | 커뮤니티 기능, 댓글 기능, 사용자 신고 및 정지 기능, 서비스 UI |
 | 정준열 | Full-Stack | Team 기능, 리뷰 기능, Team 채팅, 발표 |
 | 최성은 | Full-Stack | FAQ 기능, 구장 조회 |
-| **홍주희** | Full-Stack | 회원 관리, 메일 알림 서비스, 1:1 문의, 대회 이벤트, AI 챗봇, 시스템 설계, 노션 관리, PPT |
 
 ---
 
@@ -512,67 +513,6 @@ public ChatResponse getChatbotResponse(String userMessage) {
 
 ---
 
-## 🚀 설치 및 실행
-
-### Prerequisites
-- Java 17+
-- MySQL 8.0+
-- Redis 6.0+
-- AWS 계정 (EC2, S3, RDS)
-- Gmail API 키
-- Dialogflow API 키
-
-### 설치
-
-```bash
-# 1. 레포지토리 클론
-git clone https://github.com/kittyjh19/matchon_web.git
-cd matchon_web
-
-# 2. application.yml 설정
-cp src/main/resources/application.yml.example src/main/resources/application.yml
-# application.yml 파일을 열어 DB, Redis, AWS, API 키 설정
-
-# 3. 빌드 및 실행
-./gradlew clean build
-java -jar build/libs/matchon-0.0.1-SNAPSHOT.jar
-```
-
-### 환경 변수 설정
-
-```yaml
-# application.yml
-spring:
-  datasource:
-    url: jdbc:mysql://localhost:3306/matchon
-    username: ${DB_USERNAME}
-    password: ${DB_PASSWORD}
-    
-  data:
-    redis:
-      host: ${REDIS_HOST}
-      port: 6379
-      
-  mail:
-    host: smtp.gmail.com
-    username: ${GMAIL_USERNAME}
-    password: ${GMAIL_APP_PASSWORD}
-    
-cloud:
-  aws:
-    credentials:
-      access-key: ${AWS_ACCESS_KEY}
-      secret-key: ${AWS_SECRET_KEY}
-    s3:
-      bucket: ${S3_BUCKET_NAME}
-      
-dialogflow:
-  project-id: ${DIALOGFLOW_PROJECT_ID}
-  credentials-path: ${DIALOGFLOW_KEY_PATH}
-```
-
----
-
 ## 📚 API 문서
 
 | Method | Endpoint | Description |
@@ -592,18 +532,12 @@ dialogflow:
 
 ---
 
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
----
 
 ## 👨‍💻 Contact
 
-**홍주희** - Backend Developer
+**홍주희** - Software Developer
 
-- 📧 Email: [your.email@example.com]
-- 💼 LinkedIn: [your-linkedin]
+- 📧 Email: [kittyjh1019@naver.com]
 - 🐱 GitHub: [@kittyjh19](https://github.com/kittyjh19)
 
 ---
