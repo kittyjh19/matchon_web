@@ -6,10 +6,6 @@
 
 **팀 스포츠 실시간 매칭 플랫폼**
 
-[![GitHub Stars](https://img.shields.io/github/stars/kittyjh19/matchon_web?style=social)](https://github.com/kittyjh19/matchon_web)
-[![GitHub Issues](https://img.shields.io/github/issues/kittyjh19/matchon_web)](https://github.com/kittyjh19/matchon_web/issues)
-[![GitHub Pull Requests](https://img.shields.io/github/issues-pr/kittyjh19/matchon_web)](https://github.com/kittyjh19/matchon_web/pulls)
-
 [📺 시연 영상](https://www.youtube.com/watch?v=lWkFdvAquZ4) | [📖 API 문서](#) | [🐛 버그 리포트](https://github.com/kittyjh19/matchon_web/issues)
 
 </div>
