@@ -2,7 +2,7 @@
 
 <div align="center">
   
-![MatchOn Logo](https://via.placeholder.com/800x200/4CAF50/FFFFFF?text=MATCHON)
+![MatchOn Logo]<img src="./자료/images/matchon_logo.png" alt="MatchON Logo" width="300"/>
 
 **팀 스포츠 실시간 매칭 플랫폼**
 
