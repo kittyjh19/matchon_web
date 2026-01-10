@@ -5,7 +5,7 @@
 
 **팀 스포츠 실시간 매칭 플랫폼**
 
-[📺 시연 영상](https://www.youtube.com/watch?v=lWkFdvAquZ4) | [📖 API 문서](#)
+[📺 시연 영상](https://www.youtube.com/watch?v=lWkFdvAquZ4)
 
 </div>
 
