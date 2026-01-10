@@ -1,8 +1,7 @@
 # ⚽ MATCHON
 
 <div align="center">
-  
-![MatchOn Logo]<img src="./자료/images/matchon_logo.png" alt="MatchON Logo" width="300"/>
+  <img src="./src/main/resources/img/matchon_logo.png" alt="MatchON Logo" width="300"/>
 
 **팀 스포츠 실시간 매칭 플랫폼**
 
